@@ -8,7 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot(),
     CommonModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     
   ],
   providers: [

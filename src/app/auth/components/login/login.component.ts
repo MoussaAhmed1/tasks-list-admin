@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private authService:AuthService,
     private toastr:ToastrService,
-    private router:Router
+    private router:Router,
+    private spinner:NgxSpinnerService
   ) {
     this.loginForm = fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -37,14 +39,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.spinner.show();
     this.authService.login(this.loginForm.value).subscribe({
       next:(res)=>{
         this.toastr.success('Login Successfull');
-        this.router.navigate(['tasks']);
+        this.router.navigate(['tasks'],{queryParams:{role:this.loginForm.get('role')?.value}});
       },
 
       error:(err:{error:{message:string}})=>{
         this.toastr.error(err?.error?.message)
+      },
+      complete:()=>{
+        this.spinner.hide()
       }
     })
   }
