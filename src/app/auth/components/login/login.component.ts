@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe({
       next:(res)=>{
         this.toastr.success('Login Successfull');
-        this.router.navigate(['tasks'],{queryParams:{role:this.loginForm.get('role')?.value}});
+        localStorage.setItem("token" , res.token);
+        this.router.navigate(['tasks'],{queryParams:{role:this.loginForm.get('role')?.value,}});
       },
 
       error:(err:{error:{message:string}})=>{
