@@ -8,6 +8,11 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'tasks',
+        pathMatch: 'full'
+      },
+      {
         path:"tasks",
         loadChildren: () => import('./tasks-admin/tasks-admin.module').then(m => m.TasksAdminModule)
       }

@@ -17,15 +17,15 @@ export class LayoutComponent {
 
   changeLanguage() {
     if(this.lang == "en") {
-      localStorage.setItem('language' , 'ar')
+      sessionStorage.setItem('language' , 'ar')
     } else {
-      localStorage.setItem('language' , 'en')
+      sessionStorage.setItem('language' , 'en')
     }
     window.location.reload()
   }
 
   logout() {
     this.router.navigate(['/auth'])
-    localStorage.removeItem('token')
+    sessionStorage.removeItem('token')
   }
 }

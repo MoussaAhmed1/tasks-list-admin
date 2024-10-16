@@ -9,8 +9,7 @@ nav .navbar-brand {
 }
 nav a {
     font-size: 20px;
-    color: #FFF!important;
-    //padding: 7px 20px;  
+    color: #FFF!important; 
 }
 nav a.active  {
     background-color: #910340;
