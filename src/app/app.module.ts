@@ -17,6 +17,7 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { errorInterceptor } from './core/interceptors/error.interceptor';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -32,7 +33,7 @@ import { authInterceptor } from './core/interceptors/auth.interceptor';
   ],
   providers: [
     provideAnimationsAsync(),
-    provideHttpClient(withFetch(), withInterceptors([authInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([authInterceptor,errorInterceptor])),
   ],
   bootstrap: [AppComponent],
 })
