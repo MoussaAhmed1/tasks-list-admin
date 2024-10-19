@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private authService:AuthService,
     private toastr:ToastrService,
     private router:Router,
-    private spinner:NgxSpinnerService
+    private spinner:NgxSpinnerService,
+    public translate: TranslateService
   ) {
     this.loginForm = fb.group({
       email: ['', [Validators.required, Validators.email]],

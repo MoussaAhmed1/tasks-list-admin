@@ -1,0 +1,41 @@
+{
+  "auth": {
+    "email": "البريد الالكتروني",
+    "password": "كلمة المرور",
+    "required": "هذا الحقل مطلوب",
+    "login": "تسجيل الدخول"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "users": "المستخدمين",
+    "tasks": "المهام",
+    "logout": "تسجيل الخروج",
+    "allTasks": "كل المهام",
+    "addTask": "اضافة مهمة"
+  },
+  "tasks": {
+    "addTask": "اضافة مهمة",
+    "Complete": "مكتمل",
+    "search": "بحث",
+    "byUser": "بواسطة المستخدم",
+    "status": "الحالة",
+    "fromDate": "من تاريخ",
+    "toDate": "إلى تاريخ",
+    "image": "الصورة",
+    "title": "العنوان",
+    "username": "اسم المستخدم",
+    "deadline": "الموعد النهائي",
+    "update": "تحديث",
+    "delete": "حذف"
+  },
+
+  "users": {},
+
+  "general": {
+    "loading": "Loading"
+  },
+
+  "toaster": {},
+
+  "buttons": {}
+}

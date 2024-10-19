@@ -1,4 +1,4 @@
-<div class="login d-flex justify-content-md-start justify-content-sm-center align-items-center p-0 m-0" >
+<div class="login d-flex justify-content-md-start justify-content-sm-center align-items-center p-0 m-0">
     
     <div class="row">
         <div class="col-md-6 p-0 d-sm-none d-md-flex d-none">
@@ -10,24 +10,24 @@
         <div class="col-md-6 col-sm-12">
          <div class="h-100 d-flex align-items-center justify-content-center w-100">
             <div class="box w-75">
-                <h2>Login </h2>
+                <h2>{{"auth.login"|translate}} </h2>
              
         
-                <form [formGroup]="loginForm">
-                    <mat-form-field appearance="outline" class="w-100">
-                        <mat-label>Email</mat-label>
+                <form [formGroup]="loginForm" >
+                    <mat-form-field appearance="outline" class="w-100 mb-3" >
+                        <mat-label>{{"auth.email"|translate}}</mat-label>
                         <input matInput formControlName="email"  placeholder="email">
-                        <mat-error>required</mat-error>
+                        <mat-error>{{"auth.required"|translate}} </mat-error>
                     </mat-form-field>
-                    <mat-form-field appearance="outline" class="w-100">
-                        <mat-label>Password</mat-label>
+                    <mat-form-field appearance="outline" class="w-100" >
+                        <mat-label>{{"auth.password"|translate}} </mat-label>
                         <input matInput formControlName="password" type="password"  placeholder="password">
-                        <mat-error>required</mat-error>
+                        <mat-error>{{"auth.required"|translate}} </mat-error>
         
                     </mat-form-field>
                 </form>
                 <div class="d-flex justify-content-center">
-                    <button   mat-raised-button color="warn" (click)="login()">Login</button>
+                    <button   mat-raised-button color="warn" (click)="login()">{{"auth.login"|translate}}</button>
                 </div>
             </div>
          </div>

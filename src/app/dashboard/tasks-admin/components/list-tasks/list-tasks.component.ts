@@ -7,6 +7,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { MatDatepickerInputEvent,DateRange } from '@angular/material/datepicker';
 import moment from 'moment';
 import { PageEvent } from '@angular/material/paginator';
+import { TranslateService } from '@ngx-translate/core';
 export interface Task {
   position: string;
   title: string;
@@ -57,7 +58,8 @@ displayedColumns: string[] = [
   constructor(
     private taskAdminService: TaskAdminService,
     private dialog: MatDialog,
-    private toaster: ToastrService
+    private toaster: ToastrService,
+    public translate: TranslateService
   ) {}
   
   ngOnInit() {

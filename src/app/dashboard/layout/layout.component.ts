@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout',
@@ -8,24 +9,26 @@ import { Router } from '@angular/router';
 })
 export class LayoutComponent {
   lang:any = "en"
-  constructor( private router:Router) { 
-   
+  constructor( private router:Router,public translate:TranslateService) {
+    this.lang = localStorage.getItem('language')
   }
 
   ngOnInit(): void {
   }
 
   changeLanguage() {
-    if(this.lang == "en") {
-      sessionStorage.setItem('language' , 'ar')
+    if(this.translate.currentLang == "en") {
+      this.translate.use('ar')
+      localStorage.setItem('language' , 'ar');
     } else {
-      sessionStorage.setItem('language' , 'en')
+      this.translate.use('en')
+      localStorage.setItem('language' , 'en');
     }
     window.location.reload()
   }
 
   logout() {
     this.router.navigate(['/auth'])
-    sessionStorage.removeItem('token')
+    localStorage.removeItem('token')
   }
 }

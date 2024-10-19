@@ -12,6 +12,7 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 import { authInterceptor } from '../../core/interceptors/auth.interceptor';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { MatPaginator } from '@angular/material/paginator';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MatPaginator } from '@angular/material/paginator';
     MatButtonModule,
     MatError,
     MatFormField,
-    MatPaginator
+    MatPaginator,
+    SharedModule
   ],
   providers: [provideHttpClient(withFetch(),withInterceptors([authInterceptor]))]
 

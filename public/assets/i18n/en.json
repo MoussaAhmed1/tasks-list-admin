@@ -1,0 +1,41 @@
+{
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "required": "This field is required",
+    "login": "Login"
+  },
+  "nav": {
+    "home": "Home",
+    "users": "Users",
+    "tasks": "Tasks",
+    "logout": "Logout",
+    "allTasks": "All Tasks",
+    "addTask": "Add Task"
+  },
+  "tasks": {
+    "addTask": "Add Task",
+    "Complete": "Complete",
+    "search": "Search",
+    "byUser": "By User",
+    "status": "Status",
+    "fromDate": "From Date",
+    "toDate": "To Date",
+    "image": "Image",
+    "title": "Title",
+    "username": "Username",
+    "deadline": "Deadline",
+    "update": "Update",
+    "delete": "Delete"
+  },
+
+  "users": {},
+
+  "general": {
+    "loading": "Loading"
+  },
+
+  "toaster": {},
+
+  "buttons": {}
+}
