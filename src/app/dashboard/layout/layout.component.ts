@@ -28,7 +28,7 @@ export class LayoutComponent {
   }
 
   logout() {
+    sessionStorage.removeItem('token')
     this.router.navigate(['/auth'])
-    localStorage.removeItem('token')
   }
 }
