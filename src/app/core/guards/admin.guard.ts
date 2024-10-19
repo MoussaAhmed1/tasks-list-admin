@@ -6,6 +6,6 @@ export const adminGuard: CanActivateChildFn = (childRoute, state) => {
   if (localStorage.getItem('token')) {
     return true;
   }
-  return false;
   router.navigate(['/auth']);
+  return false;
 };

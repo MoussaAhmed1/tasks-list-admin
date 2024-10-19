@@ -11,8 +11,9 @@
             <a class="nav-link" routerLink="/users"  routerLinkActive="active">{{'nav.users'|translate}}</a>
           </li>
         </ul>
-       <div class="nav-item d-flex justify-content-end gap-2">
+       <div class="nav-item d-flex justify-content-end gap-1">
         <a class="nav-link" (click)="logout()">{{'nav.logout'|translate}}</a>
+        <p class="text-light bold mx-1">|</p>
         <a class="nav-link" (click)="changeLanguage()"> {{translate.currentLang == 'en' ? 'عربي' : "English" }} </a>
        </div>
       </div>
