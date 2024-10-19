@@ -1,3 +1,3 @@
 export const environment = {
-  baseApi:'http://localhost:8080'
+  baseApi:'https://tasks-be.vercel.app'
 };
