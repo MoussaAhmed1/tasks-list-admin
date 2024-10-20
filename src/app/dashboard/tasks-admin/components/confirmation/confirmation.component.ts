@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-confirmation',
@@ -9,7 +10,8 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class ConfirmationComponent {
   constructor(
     private dialog: MatDialogRef<ConfirmationComponent>,
-    private MatDialog:MatDialog
+    private MatDialog:MatDialog,
+    public translate:TranslateService
   ) { }
   close() {
   this.dialog.close();

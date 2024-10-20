@@ -1,6 +1,11 @@
-<div class="p-4">
+<div class="p-4" [dir]="translate.currentLang == 'ar' ? 'rtl' : 'ltr'">
   <header class="d-flex justify-content-between align-items-center">
-    <h3 class="m-0">Add New Task</h3>
+    @if (data) {
+      <h3 class="m-0">{{"tasks.updateTask"|translate}}</h3>
+    }@else{
+
+      <h3 class="m-0">{{"tasks.addNewTask"|translate}}</h3>
+    }
     <button
       mat-flat-button
       class="text-danger bg-light flex justify-content-end"
@@ -13,24 +18,24 @@
     <div class="row mt-3">
       <div class="col-md-12">
         <mat-form-field appearance="outline" class="w-100">
-          <mat-label>Title</mat-label>
-          <input matInput formControlName="title" placeholder="title" />
+          <mat-label>{{"tasks.title"|translate}}</mat-label>
+          <input matInput formControlName="title" [placeholder]='translate.instant("tasks.title")' />
         </mat-form-field>
       </div>
       <div class="col-md-12">
         <mat-form-field appearance="outline" class="w-100">
-          <mat-label>User</mat-label>
+          <mat-label>{{"tasks.user"|translate}}</mat-label>
           <mat-select formControlName="userId">
             <!-- <mat-option *ngFor="let user of users" [value]="user?.id">
                               {{user?.name}}
                             </mat-option> -->
-            <mat-option value="670432fd48dcf56849da43ac"> Admin </mat-option>
-            <mat-option value="66fba7841ead90cbdbb33277"> Mousa </mat-option>
+            <mat-option value="670432fd48dcf56849da43ac"> {{"Admin"}} </mat-option>
+            <mat-option value="66fba7841ead90cbdbb33277"> {{"Mousa"}} </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="col-md-12 my-3" hidden>
-        <label for="selectFile" class="btn btn-primary">Select Image</label>
+        <label for="selectFile" class="btn btn-primary">{{"tasks.selectImage"|translate}}</label>
         <p class="text-wrap text-break">{{ fileName }}</p>
         <input
           type="file"
@@ -48,7 +53,7 @@
       </div>
       <div class="col-md-12">
         <mat-form-field appearance="outline" class="w-100">
-          <mat-label>Deadline Date</mat-label>
+          <mat-label>{{"tasks.deadlineDate"|translate}}</mat-label>
           <input matInput [matDatepicker]="picker" formControlName="deadline" />
           <mat-datepicker-toggle
             matSuffix
@@ -60,11 +65,10 @@
 
       <div class="col-md-12">
         <mat-form-field appearance="outline" class="w-100">
-          <mat-label>Description</mat-label>
+          <mat-label>{{"tasks.description"|translate}}</mat-label>
           <textarea
             matInput
             formControlName="description"
-            placeholder="task description ...."
           ></textarea>
         </mat-form-field>
       </div>
@@ -80,7 +84,7 @@
         (click)="updateTask()"
         [disabled]="createTaskForm.invalid"
       >
-        Update
+        {{"tasks.update"|translate}}
       </button>
 
       } @else {
@@ -91,7 +95,7 @@
         (click)="createTask()"
         [disabled]="createTaskForm.invalid"
       >
-        Create
+        {{"tasks.create"|translate}}
       </button>
       }
 
@@ -100,7 +104,7 @@
         (click)="close()"
         class="btn btn-danger py-1 px-5"
       >
-        Close
+        {{"tasks.close"|translate}}
       </button>
     </div>
   </footer>

@@ -7,6 +7,7 @@ import dayjs from 'dayjs';
 import { Task } from '../../../../../interfaces/Tasks';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
 import { environment } from '../../../../../environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -22,7 +23,8 @@ export class CreateTaskComponent {
     public dialog: MatDialogRef<CreateTaskComponent>,
     private matDialog: MatDialog,
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public translate: TranslateService
   ) {
     this.createForm();
   }

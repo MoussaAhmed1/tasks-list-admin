@@ -15,6 +15,7 @@
   },
   "tasks": {
     "addTask": "Add Task",
+    "updateTask": "Update Task",
     "Complete": "Complete",
     "search": "Search",
     "byUser": "By User",
@@ -26,7 +27,18 @@
     "username": "Username",
     "deadline": "Deadline",
     "update": "Update",
-    "delete": "Delete"
+    "delete": "Delete",
+    "addNewTask": "Add New Task",
+    "user": "User",
+    "admin": "Admin",
+    "mousa": "Mousa",
+    "selectImage": "Select Image",
+    "deadlineDate": "Deadline Date",
+    "description": "Description",
+    "create": "Create",
+    "discardChangesConfirmation": "Are You Sure That You Want To Discard Your Changes?",
+    "no": "No",
+    "yes": "Yes"
   },
 
   "users": {},

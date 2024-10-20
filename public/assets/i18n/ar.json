@@ -15,6 +15,7 @@
   },
   "tasks": {
     "addTask": "اضافة مهمة",
+    "updateTask": "تحديث المهمة",
     "Complete": "مكتمل",
     "search": "بحث",
     "byUser": "بواسطة المستخدم",
@@ -26,7 +27,19 @@
     "username": "اسم المستخدم",
     "deadline": "الموعد النهائي",
     "update": "تحديث",
-    "delete": "حذف"
+    "delete": "حذف",
+    "addNewTask": "إضافة مهمة جديدة",
+    "user": "المستخدم",
+    "admin": "المسؤول",
+    "mousa": "موسى",
+    "selectImage": "اختر صورة",
+    "deadlineDate": "تاريخ الموعد النهائي",
+    "description": "الوصف",
+    "create": "إنشاء",
+    "close": "إغلاق",
+      "discardChangesConfirmation": "هل أنت متأكد أنك تريد تجاهل التغييرات؟",
+  "no": "لا",
+  "yes": "نعم"
   },
 
   "users": {},
