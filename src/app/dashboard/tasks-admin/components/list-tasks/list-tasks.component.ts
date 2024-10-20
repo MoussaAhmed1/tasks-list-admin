@@ -8,6 +8,7 @@ import { MatDatepickerInputEvent,DateRange } from '@angular/material/datepicker'
 import moment from 'moment';
 import { PageEvent } from '@angular/material/paginator';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from '../../../../../environments/environment';
 export interface Task {
   position: string;
   title: string;
@@ -32,6 +33,12 @@ export interface TaskFilter {
   styleUrl: './list-tasks.component.css',
 })
 export class ListTasksComponent implements OnInit {
+ImgUrl(image: string) {
+  if (!image) {
+    return "/assets/no-photo.jpg"
+  }
+  return environment.baseApi + "/" + image
+}
 
 
 displayedColumns: string[] = [

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import dayjs from 'dayjs';
 import { Task } from '../../../../../interfaces/Tasks';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -36,14 +37,14 @@ export class CreateTaskComponent {
         deadline: [ new Date(this.data?.deadline.split('-').reverse().join('-')).toISOString(), Validators.required],
       });
       this.fileName = this.data.image
-      this.preview = "http://localhost:8080/" + this.data.image
+      this.preview = environment.baseApi + "/" + this.data.image
     }
     else{
       
       this.createTaskForm = this.fb.group({
         title: ['', [Validators.required, Validators.minLength(5)]],
         userId: ['', Validators.required],
-        image: ['', Validators.required],
+        image: ['',],
         description: ['', Validators.required],
         deadline: ['', Validators.required],
       });

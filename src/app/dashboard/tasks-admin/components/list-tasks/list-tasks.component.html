@@ -71,7 +71,7 @@
         <th mat-header-cell *matHeaderCellDef>{{ "tasks.image" | translate }}</th>
         <td mat-cell *matCellDef="let element; let index = index">
           <img
-            [src]="'http://localhost:8080/' + element.image"
+            [src]="ImgUrl(element.image)"
             alt=""
             class="img-fluid"
             style="border-radius: 50%"
