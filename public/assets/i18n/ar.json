@@ -39,7 +39,8 @@
     "close": "إغلاق",
       "discardChangesConfirmation": "هل أنت متأكد أنك تريد تجاهل التغييرات؟",
   "no": "لا",
-  "yes": "نعم"
+  "yes": "نعم",
+  "deleteTaskConfirmation": "هل أنت متأكد أنك تريد حذف هذه المهمة؟"
   },
 
   "users": {},

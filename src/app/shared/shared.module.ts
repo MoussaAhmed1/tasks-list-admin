@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { provideHttpClient, withFetch, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { authInterceptor } from '../core/interceptors/auth.interceptor';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { DirectDirective } from './directives/direct.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ConfirmComponent,
+    DirectDirective
+  ],
   imports: [
     CommonModule,
     TranslateModule.forChild({

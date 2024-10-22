@@ -1,0 +1,12 @@
+<div class="p-3 text-center" appDirect>
+    <header>
+        <h6>{{data.title}} </h6>
+    </header>
+
+    <footer>
+        <div class="d-flex justify-content-center align-items-center">
+            <button mat-flat-button class="btn btn-success py-1 px-5 mx-2" (click)="confirm()" >{{"tasks.yes"|translate}}</button>
+            <button mat-flat-button class="btn btn-danger py-1 px-5" (click)="close()">{{"tasks.no"|translate}}</button>
+        </div>
+    </footer>
+</div>

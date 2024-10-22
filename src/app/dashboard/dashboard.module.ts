@@ -6,12 +6,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from '../core/interceptors/auth.interceptor';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
-
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
   ],
   imports: [
     CommonModule,

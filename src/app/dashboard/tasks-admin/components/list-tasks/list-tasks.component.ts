@@ -9,6 +9,7 @@ import moment from 'moment';
 import { PageEvent } from '@angular/material/paginator';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../../environments/environment';
+import { ConfirmComponent } from '../../../../shared/components/confirm/confirm.component';
 export interface Task {
   position: string;
   title: string;
@@ -160,14 +161,25 @@ displayedColumns: string[] = [
   }
 
   deleteTask(id: string) {
-    this.taskAdminService.deleteTask(id).subscribe({
-      next: (res: any) => {
-        this.toaster.success('Task has been deleted sucessfully');
-        this.getTasks();
-      },
-      error: (err) => {
-        this.toaster.error(err?.error?.message);
-      },
+    let dialogRef = this.dialog.open(ConfirmComponent, {
+      minWidth: '450px',
+      disableClose: true,
+      data: { title: this.translate.instant('tasks.deleteTaskConfirmation') },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      // console.log('The dialog was closed');
+      //revalidate
+      if (result == true) {
+        this.taskAdminService.deleteTask(id).subscribe({
+          next: (res: any) => {
+            this.toaster.success('Task has been deleted sucessfully');
+            this.getTasks();
+          },
+          error: (err) => {
+            this.toaster.error(err?.error?.message);
+          },
+        });
+      }
     });
   }
   updateTask(task: any) {
