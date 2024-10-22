@@ -10,6 +10,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../../environments/environment';
 import { ConfirmComponent } from '../../../../shared/components/confirm/confirm.component';
+import { UserService } from '../../../users-management/services/user.service';
 export interface Task {
   position: string;
   title: string;
@@ -67,16 +68,30 @@ displayedColumns: string[] = [
     private taskAdminService: TaskAdminService,
     private dialog: MatDialog,
     private toaster: ToastrService,
-    public translate: TranslateService
-  ) {}
-  
+    public translate: TranslateService,
+    private userService: UserService
+  ) {
+    this.userService.userData.subscribe((res:any) => {
+      console.log(res);
+      this.users = res?.data.map((user:any)=> {
+        return {
+          name: user?.username,
+          id: user?._id
+        }
+      })
+    })
+  }
+  getUsers() {
+    this.userService.getUsersData()
+  }
   ngOnInit() {
     this.getTasks();
     //get users 
-    this.users = [
-      { name: "admin", id: "670432fd48dcf56849da43ac" },
-      { name: "Mousa", id: "66fba7841ead90cbdbb33277" },
-    ]
+    this.getUsers();
+    // this.users = [
+    //   { name: "admin", id: "670432fd48dcf56849da43ac" },
+    //   { name: "Mousa", id: "66fba7841ead90cbdbb33277" },
+    // ]
   }
   changePage($event: PageEvent) {
     this.filteration = {
