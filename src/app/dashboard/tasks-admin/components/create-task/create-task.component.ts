@@ -8,6 +8,7 @@ import { Task } from '../../../../../interfaces/Tasks';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
 import { environment } from '../../../../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from '../../../users-management/services/user.service';
 @Component({
   selector: 'app-create-task',
   templateUrl: './create-task.component.html',
@@ -17,6 +18,7 @@ export class CreateTaskComponent {
   createTaskForm!: FormGroup;
   fileName!: string;
   preview!: string;
+  users: {id:string,name:string}[] = [];
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Task,
     private service: TaskAdminService,
@@ -24,9 +26,18 @@ export class CreateTaskComponent {
     private matDialog: MatDialog,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private userService: UserService
   ) {
     this.createForm();
+    this.userService.userData.subscribe((res:any) => {
+     this.users = res?.data.map((user:any)=> {
+        return {
+          name: user?.username,
+          id: user?._id
+        }
+      })
+    })
   }
   
   createForm() {

@@ -26,11 +26,9 @@
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>{{"tasks.user"|translate}}</mat-label>
           <mat-select formControlName="userId">
-            <!-- <mat-option *ngFor="let user of users" [value]="user?.id">
+            <mat-option *ngFor="let user of users" [value]="user?.id">
                               {{user?.name}}
-                            </mat-option> -->
-            <mat-option value="670432fd48dcf56849da43ac"> {{"Admin"}} </mat-option>
-            <mat-option value="66fba7841ead90cbdbb33277"> {{"Mousa"}} </mat-option>
+                            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
