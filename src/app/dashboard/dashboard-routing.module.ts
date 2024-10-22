@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path:"tasks",
         loadChildren: () => import('./tasks-admin/tasks-admin.module').then(m => m.TasksAdminModule)
+      },
+      {
+        path:"users",
+        loadChildren: () => import('./users-management/users-management.module').then(m => m.UsersManagementModule)
       }
     ],
   },

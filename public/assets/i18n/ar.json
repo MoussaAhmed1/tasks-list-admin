@@ -43,7 +43,19 @@
   "deleteTaskConfirmation": "هل أنت متأكد أنك تريد حذف هذه المهمة؟"
   },
 
-  "users": {},
+  "users": {
+    "search": "بحث",
+    "titleSearch": "بحث عن عنوان",
+    "no": "رقم.",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "tasksAssigned": "المهام المسندة",
+    "delete": "حذف",
+    "inActive": "غير نشط",
+    "active": "نشط",
+    "deleteUserConfirmation":"هل انت متاكد من حذف هذا المستخدم؟"
+  }
+  ,
 
   "general": {
     "loading": "Loading"

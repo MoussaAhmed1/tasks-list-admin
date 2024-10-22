@@ -50,7 +50,8 @@ export class LoginComponent implements OnInit {
       },
 
       error:(err:{error:{message:string}})=>{
-        this.toastr.error(err?.error?.message)
+        this.toastr.error(err?.error?.message);
+        this.spinner.hide()
       },
       complete:()=>{
         this.spinner.hide()
