@@ -45,12 +45,14 @@ export class CreateTaskComponent {
       this.createTaskForm = this.fb.group({
         title: [this.data.title, [Validators.required, Validators.minLength(5)]],
         userId: [this.data.userId?._id, Validators.required],
-        image: [this.data.image, Validators.required],
+        image: [this.data.image],
         description: [this.data.description, Validators.required],
         deadline: [ new Date(this.data?.deadline.split('-').reverse().join('-')).toISOString(), Validators.required],
       });
-      this.fileName = this.data.image
-      this.preview = environment.baseApi + "/" + this.data.image
+      if(this.data.image){
+        this.fileName = this.data?.image
+        this.preview = environment.baseApi + "/" + this.data.image
+      }
     }
     else{
       
@@ -62,7 +64,7 @@ export class CreateTaskComponent {
         deadline: ['', Validators.required],
       });
     }
-    console.log(this.createTaskForm.dirty);
+    // console.log(this.createTaskForm.dirty);
   }
 
   selectImage($event: any) {

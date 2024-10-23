@@ -12,7 +12,6 @@ import { SharedModule } from '../shared/shared.module';
     LayoutComponent,
   ],
   imports: [
-    CommonModule,
     DashboardRoutingModule,
     SharedModule
   ],
